@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#343635"
+    tools:context=".HomePage">
+    <!--  Toolbar  -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="417dp"
+        android:layout_height="61dp"
+        android:layout_alignParentTop="true"
+        android:background="#d40b4a"
+        android:elevation="4dp"
+        android:minHeight="?attr/actionBarSize"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="8dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        tools:ignore="MissingConstraints">
+        <!--  Title  -->
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="2dp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="SAFETY FIRST"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="normal"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView android:id="@+id/editTextText2"
+        android:layout_width="343dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="34dp"
+        android:layout_marginBottom="35dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textMultiLine"
+        android:text="PRESS BUTTON IN CASE OF EMERGENCY"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton3"/>
+
+    <Button android:id="@+id/button2"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="94dp"
+        android:background="@drawable/roundbutton"
+        android:text="MAIN MENU"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText2"/>
+
+    <ImageView
+        android:id="@+id/imageButton3"
+        android:layout_width="267dp"
+        android:layout_height="240dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginEnd="72dp"
+        android:layout_marginBottom="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextText2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:srcCompat="@drawable/logo"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

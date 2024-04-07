@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="#343635">
+
+<FrameLayout
+    android:id="@+id/frameLayoutHeading"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:background="#d40b4a"
+    android:backgroundTint="#d40b4a">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="INSTRUCTION MANUAL"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:textColor="#FFFF"/>
+</FrameLayout>
+
+<ScrollView
+    android:layout_below="@id/frameLayoutHeading"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1. Emergency Button: Press the emergency button to trigger an immediate alert to your emergency contacts. This message sends an emergency message through SMS along with your GPS location."
+            android:textSize="18dp"
+            android:textStyle="italic"
+            android:textColor="@color/white"
+            android:layout_marginBottom="16dp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="120dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/emergencybtn" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2. Add Contacts: You can add your guardians and friends who will be notified in case of an emergency."
+            android:textSize="18dp"
+            android:textStyle="italic"
+            android:textColor="@color/white"
+            android:layout_marginBottom="16dp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="120dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/keepcontact" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3. Delete Contacts: Remove unwanted emergency contacts from your list."
+            android:textSize="18dp"
+            android:textStyle="italic"
+            android:textColor="@color/white"
+            android:layout_marginBottom="16dp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="120dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/delcontact" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4. Nearby Police Station: Use this feature to detect the nearest police station to your current location."
+            android:textSize="18dp"
+            android:textStyle="italic"
+            android:textColor="@color/white"
+            android:layout_marginBottom="16dp"/>
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="120dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/station" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5. Safety Manual for Young Girls: Access useful safety tips and guidance for young girls."
+            android:textSize="18dp"
+            android:textStyle="italic"
+            android:textColor="@color/white"
+            android:layout_marginBottom="16dp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="120dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/manual" />
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Got it!"
+            android:textColor="@color/white"
+            android:background="#d40b4a"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_margin="16dp"/>
+
+    </LinearLayout>
+</ScrollView>
+</RelativeLayout>
+
+
+

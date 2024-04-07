@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#343635"
+    >
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#d40b4a"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:elevation="4dp"
+        android:layout_alignParentTop="true">
+
+        <!-- Back button -->
+        <ImageButton
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="?android:attr/homeAsUpIndicator"
+            android:background="?attr/selectableItemBackgroundBorderless"
+
+            android:onClick="onBackPressed" />
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MAIN MENU"
+            android:textStyle="bold"
+            android:textColor="#d9dadb"
+            android:textSize="30sp"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:layout_weight="1" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- Grid of CardViews -->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:columnCount="2"
+        android:rowCount="3"
+        android:padding="16dp">
+
+        <!-- CardView 1 -->
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="3dp"
+            android:layout_height="27dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            app:cardBackgroundColor="#d9dadb"
+
+            >
+
+
+            <ImageView
+                android:id="@+id/eye"
+                android:layout_width="120dp"
+                android:layout_height="105dp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:background="@drawable/eye" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="VIEW CONTACT"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginBottom="20dp" />
+
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- CardView 2 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            app:cardBackgroundColor="#e1e2e3"
+            android:layout_margin="8dp">
+
+
+            <ImageView
+                android:id="@+id/add"
+                android:layout_width="92dp"
+                android:layout_height="95dp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:src="@drawable/add"
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ADD CONTACT"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginBottom="20dp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- CardView 3 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:cardBackgroundColor="#e1e2e3"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="8dp"
+            android:background="#69A4BE"
+
+            >
+
+            <ImageView
+                android:id="@+id/delete"
+                android:layout_width="82dp"
+                android:layout_height="83dp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:src="@drawable/delete"
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DELETE CONTACT"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginBottom="20dp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- CardView 4 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            app:cardBackgroundColor="#e1e2e3"
+            android:layout_rowWeight="1"
+            android:layout_margin="8dp">
+
+            <ImageView
+                android:id="@+id/safety"
+                android:layout_width="95dp"
+                android:layout_height="90dp"
+                android:layout_gravity="center"
+                android:layout_centerInParent="true"
+
+                android:src="@drawable/safety" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SAFETY MANUAL"
+                android:gravity="center"
+                android:inputType="textMultiLine"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginBottom="20dp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- CardView 5 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            app:cardBackgroundColor="#e1e2e3"
+            android:layout_rowWeight="1"
+            android:layout_margin="8dp">
+
+            <ImageView
+                android:id="@+id/instruction"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_gravity="center"
+                android:layout_centerInParent="true"
+                android:src="@drawable/instruction"
+                android:layout_margin="30dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="INSTRUCTIONS"
+                android:gravity="center"
+                android:inputType="textMultiLine"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginBottom="20dp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- CardView 6 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            app:cardBackgroundColor="#e1e2e3"
+            android:layout_rowWeight="1"
+            android:layout_margin="8dp">
+
+            <ImageView
+                android:id="@+id/locate"
+                android:layout_width="90dp"
+                android:layout_height="100dp"
+
+                android:layout_gravity="center"
+                android:layout_centerInParent="true"
+                android:src="@drawable/locate" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="LOCATION"
+                android:gravity="center"
+                android:inputType="textMultiLine"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginBottom="20dp" />
+
+
+        </androidx.cardview.widget.CardView>
+
+
+
+
+    </GridLayout>
+
+</RelativeLayout>

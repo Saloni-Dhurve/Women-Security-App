@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#343635">
+
+    <FrameLayout
+        android:id="@+id/frameLayoutHeading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:background="#d40b4a">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SAFETY MANUAL"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="#FFFF"
+            android:layout_gravity="center"/>
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/frameLayoutHeading"
+        android:layout_marginTop="43dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="1. Trust Your Instincts: If a situation or person feels unsafe or uncomfortable, trust your gut feeling and remove yourself from the situation."
+                android:textColor="@color/white"
+                android:textStyle="italic"
+                android:textSize="18dp" />
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="208dp"
+                android:layout_marginBottom="16dp"
+                android:src="@drawable/instinct" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="2. Stay Aware of Your Surroundings: Always be mindful of your environment, whether you're walking alone or in a crowded area. Avoid distractions like headphones or excessive phone use that can compromise your awareness."
+                android:textColor="@color/white"
+                android:textStyle="italic"
+                android:textSize="18dp" />
+
+            <ImageView
+                android:layout_width="396dp"
+                android:layout_height="208dp"
+                android:layout_marginBottom="16dp"
+                android:src="@drawable/awareness" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="3. Travel in Well-Lit Areas: When walking alone, especially at night, stick to well-lit streets and avoid poorly lit or deserted areas."
+                android:textColor="@color/white"
+                android:textStyle="italic"
+                android:textSize="18dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="208dp"
+                android:layout_marginBottom="16dp"
+                android:src="@drawable/welllit" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="4. Inform Someone of Your Whereabouts: Whenever you're going out alone, let a trusted friend or family member know your plans and expected return time."
+                android:textColor="@color/white"
+                android:textStyle="italic"
+                android:textSize="18dp" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="208dp"
+                android:layout_marginBottom="16dp"
+                android:src="@drawable/inform" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="5. Learn Self-Defense: Consider taking a self-defense class to learn basic techniques that could help you protect yourself in dangerous situations."
+                android:textColor="@color/white"
+                android:textStyle="italic"
+                android:textSize="18dp" />
+
+            <ImageView
+                android:layout_width="355dp"
+                android:layout_height="190dp"
+                android:layout_marginBottom="16dp"
+                android:src="@drawable/selfdefence" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="6. Keep Emergency Contacts Handy: Have important contacts like emergency services, friends, and family programmed into your phone or written down in a readily accessible location."
+                android:textColor="@color/white"
+                android:textStyle="italic"
+                android:textSize="18dp" />
+
+            <ImageView
+                android:layout_width="389dp"
+                android:layout_height="208dp"
+                android:layout_marginBottom="16dp"
+                android:src="@drawable/keepcontact"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="7. Avoid Excessive Alcohol Consumption: Drinking excessively can impair judgment and make you more vulnerable to potential dangers. Always monitor your alcohol intake and know your limits."
+                android:textColor="@color/white"
+                android:textStyle="italic"
+                android:textSize="18dp" />
+
+            <ImageView
+                android:layout_width="389dp"
+                android:layout_height="208dp"
+                android:layout_marginBottom="16dp"
+                android:src="@drawable/alco"/>
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="8. Use Technology to Your Advantage: Utilize safety apps or features on your phone that allow you to share your location with trusted contacts or send out distress signals in case of emergency."
+                android:textColor="@color/white"
+                android:textStyle="italic"
+                android:textSize="18dp" />
+            <ImageView
+                android:layout_width="389dp"
+                android:layout_height="208dp"
+                android:layout_marginBottom="16dp"
+                android:src="@drawable/technosafe"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="9. Trustworthy Transportation: When using rideshare services or taxis, make sure to verify the identity of the driver and ensure you're getting into the correct vehicle. Share ride details with someone you trust."
+                android:textColor="@color/white"
+                android:textStyle="italic"
+                android:textSize="18dp" />
+            <ImageView
+                android:layout_width="389dp"
+                android:layout_height="208dp"
+                android:layout_marginBottom="16dp"
+                android:src="@drawable/safetravel"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="10. Practice Assertiveness: Be assertive in setting boundaries and saying no to anything that makes you uncomfortable. Don't hesitate to speak up if you feel threatened or harassed."
+                android:textColor="@color/white"
+                android:textStyle="italic"
+                android:textSize="18dp" />
+            <ImageView
+                android:layout_width="389dp"
+                android:layout_height="208dp"
+                android:layout_marginBottom="16dp"
+                android:src="@drawable/sayno"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="11. Carry Pepper Spray: Consider carrying pepper spray or a personal safety alarm as a precautionary measure against potential threats."
+                android:textColor="@color/white"
+                android:textStyle="italic"
+                android:textSize="18dp" />
+            <ImageView
+                android:layout_width="389dp"
+                android:layout_height="208dp"
+                android:layout_marginBottom="16dp"
+                android:src="@drawable/pepper"/>
+
+            <Button
+                android:id="@+id/backButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#d40b4a"
+                android:text="Got It!"
+                android:textColor="@color/white"
+                android:textSize="18dp" />
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
+
