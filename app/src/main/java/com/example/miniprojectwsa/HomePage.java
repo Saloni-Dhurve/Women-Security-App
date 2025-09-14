@@ -44,9 +44,10 @@ public class HomePage extends AppCompatActivity {
         locationListener = new MyLocationListener();
 
         // Request SEND_SMS and ACCESS_FINE_LOCATION permissions dynamically if not already granted
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED ||
-                ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.SEND_SMS, Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSION_SEND_SMS);
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.SEND_SMS}, PERMISSION_SEND_SMS);
+        } else {
+            checkLocationPermission();
         }
 
         emergencyImageView.setOnClickListener(new View.OnClickListener() {
@@ -67,11 +68,29 @@ public class HomePage extends AppCompatActivity {
     }
 
     private void getLocationAndSendMessage() {
+        checkLocationPermission();
+    }
+
+    private void checkLocationPermission() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSION_ACCESS_LOCATION);
         } else {
-            locationManager.requestSingleUpdate(LocationManager.GPS_PROVIDER, locationListener, null);
+            // Check if location provider is enabled
+            if (!isLocationEnabled()) {
+                // You can prompt the user to enable location services here
+                // For simplicity, let's open the location settings
+                startActivity(new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+            } else {
+                locationManager.requestSingleUpdate(LocationManager.GPS_PROVIDER, locationListener, null);
+            }
         }
+    }
+
+    // Method to check if location provider is enabled
+    private boolean isLocationEnabled() {
+        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) ||
+                locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
     }
 
     private void sendMessageWithLocation(Location location) {
@@ -107,9 +126,11 @@ public class HomePage extends AppCompatActivity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == PERMISSION_SEND_SMS || requestCode == PERMISSION_ACCESS_LOCATION) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                getLocationAndSendMessage();
-            } else {
-                Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show();
+                if (requestCode == PERMISSION_SEND_SMS) {
+                    checkLocationPermission();
+                } else {
+                    getLocationAndSendMessage();
+                }
             }
         }
     }

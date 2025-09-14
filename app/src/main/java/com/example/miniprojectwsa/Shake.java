@@ -1,7 +1,6 @@
 package com.example.miniprojectwsa;
 
 
-import android.Manifest;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -16,18 +15,14 @@ import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 
 import java.util.HashSet;
 import java.util.Set;
 
 public class Shake extends AppCompatActivity implements SensorEventListener, LocationListener {
 
-    private static final int PERMISSION_SEND_SMS = 1;
-    private static final int PERMISSION_ACCESS_LOCATION = 2;
     private static final int SHAKE_THRESHOLD = 800;
     private long lastUpdate = 0;
     private float last_x, last_y, last_z;
@@ -46,12 +41,6 @@ public class Shake extends AppCompatActivity implements SensorEventListener, Loc
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-
-        // Request SEND_SMS and ACCESS_FINE_LOCATION permissions dynamically if not already granted
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED ||
-                ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.SEND_SMS, Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSION_SEND_SMS);
-        }
     }
 
     @Override
@@ -64,14 +53,6 @@ public class Shake extends AppCompatActivity implements SensorEventListener, Loc
     protected void onPause() {
         super.onPause();
         sensorManager.unregisterListener(this);
-    }
-
-    private void getLocationAndSendMessage() {
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSION_ACCESS_LOCATION);
-        } else {
-            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
-        }
     }
 
     private void sendMessageWithLocation(Location location) {
@@ -99,18 +80,6 @@ public class Shake extends AppCompatActivity implements SensorEventListener, Loc
         } catch (Exception e) {
             Toast.makeText(this, "Failed to send emergency message to " + phoneNumber, Toast.LENGTH_SHORT).show();
             e.printStackTrace();
-        }
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == PERMISSION_SEND_SMS || requestCode == PERMISSION_ACCESS_LOCATION) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                getLocationAndSendMessage();
-            } else {
-                Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show();
-            }
         }
     }
 
@@ -159,7 +128,7 @@ public class Shake extends AppCompatActivity implements SensorEventListener, Loc
 
             if (speed > SHAKE_THRESHOLD) {
                 // Get the last known location
-                if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                     // TODO: Consider calling
                     //    ActivityCompat#requestPermissions
                     // here to request the missing permissions, and then overriding
